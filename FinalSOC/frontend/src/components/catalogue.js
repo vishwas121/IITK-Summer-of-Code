@@ -1,6 +1,6 @@
 import React ,{Component} from 'react';
 import axios from 'axios';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
+import { withStyles ,makeStyles} from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -72,7 +72,7 @@ class Catalogue extends Component {
 
   getdata = () => {
     axios
-          .get("http://localhost:8000/books/")
+          .get("http://localhost:8000/api/catalogue/")
           .then(res => this.setState({ book: res.data}))
           .catch(err => console.log(err));
   }

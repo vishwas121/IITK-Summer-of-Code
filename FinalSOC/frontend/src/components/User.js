@@ -16,7 +16,7 @@ export default class User extends Component{
     }
     getdata = () => {
         axios
-          .get("http://localhost:8000/users/")
+          .get("http://localhost:8000/api/circulation/")
           .then(res => this.setState({ user_data: res.data}))
           .catch(err => console.log(err));
     }

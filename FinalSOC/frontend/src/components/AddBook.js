@@ -1,6 +1,6 @@
 import React ,{Component} from 'react';
 import axios from 'axios';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
+import { withStyles,makeStyles} from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -75,16 +75,17 @@ export default class Staff extends Component{
       }
       else{
       axios
-       .post("http://localhost:8000/books/",thing)
+       .post("http://localhost:8000/api/catalogue/",thing)
        .then(res => this.getdata())
-       .catch(err => alert("field missing or already there"));
+       .catch(err => console.log(err));
+       // .catch(err => alert("field missing or already there"));
       }
     }
     else{
       alert("already exists");
     }
   }
- 
+
   deleteBook = () => {
     let item = this.state.new_book;
     var id = this.search(item,false);
@@ -145,7 +146,7 @@ export default class Staff extends Component{
   }
   getdata = () => {
       axios
-          .get('http://localhost:8000/books/')
+          .get('http://localhost:8000/api/catalogue/')
           .then(res => this.setState({ activebook: res.data}))
           .catch(err => console.log(err));
   }

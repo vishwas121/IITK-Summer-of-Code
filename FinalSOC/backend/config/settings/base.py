@@ -27,7 +27,7 @@ INSTALLED_APPS = [
 
 ]
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 MIDDLEWARE = [
@@ -120,3 +120,7 @@ SWAGGER_SETTINGS = {
 DJOSER = {
     'SET_PASSWORD_RETYPE': True,
 }
+
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:3000',
+)

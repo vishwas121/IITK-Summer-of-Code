@@ -29,10 +29,8 @@ export default class Check extends Component {
       this.handleCard_checkout= this.handleCard_checkout.bind(this);
       this.handleBar_checkout= this.handleBar_checkout.bind(this);
       this.handleDate_checkout= this.handleDate_checkout.bind(this);
-      this.search_user = this.search_user.bind(this);
-      this.search_circulation = this.search_circulation.bind(this);
-        }
 
+    }
     handleBar_checkin(e) {
         this.setState({bar_checkin: e.target.value});
     }
@@ -57,11 +55,11 @@ export default class Check extends Component {
 
     getdata = () => {
         axios
-              .get("http://localhost:8000/books/")
+              .get("http://localhost:8000/api/catalogue/")
               .then(res => this.setState({ books: res.data}))
               .catch(err => console.log(err));
         axios
-              .get("http://localhost:8000/users/")
+              .get("http://localhost:8000/api/circulation/")
               .then(res=> this.setState({circulation_books: res.data}))
               .catch(err => console.log(err));
 
@@ -171,7 +169,7 @@ incr_date(date_str){
         book.issued_to = "";
         book.return_date =new Date().getFullYear() + '-' + new Date().getMonth() + '-'+ new Date().getDate();
         console.log(book);
-        var url = "http://localhost:8000/books/" + book.id + "/";
+        var url = "http://localhost:8000/api/catalogue/" + book.id + "/";
         console.log(url);
         axios
             .put(url,book)
@@ -180,8 +178,9 @@ incr_date(date_str){
         const circulated_book = this.search_barcode_in(this.state.circulation_books);
         circulated_book.status = true;
         circulated_book.return_date =book.return_date;
+        var url2 = 'http://localhost:8000/api/circulation/'+ circulated_book.id + "/";
         axios
-            .put("http://localhost:8000/users/${circulated_book.id}/",circulated_book)
+            .put(url2,circulated_book)
             .then(res => console.log("yep"))
             .catch(err => console.log(err));
         }
@@ -192,14 +191,14 @@ incr_date(date_str){
         book.issued_to = this.state.card_checkout;
         book.issue_date = new Date().getFullYear() + '-' + new Date().getMonth() + '-'+ new Date().getDate();
         book.return_date = this.incr_date(book.issue_date);
-        var url = "http://localhost:8000/books/" + book.id + "/";
+        var url = "http://localhost:8000/api/catalogue/" + book.id + "/";
         axios
             .put(url,book)
             .then(res => alert(book.title+" checked out"))
             .catch(err=> console.log(err));
         const circulation_book = {"username":book.issued_to,"title":book.title,'author':book.author,'barcode':book.barcode,'status':book.status,'issue_date':book.issue_date,"return_date":book.due_date}
         axios
-            .post("http://localhost:8000/users/",circulation_book)
+            .post("http://localhost:8000/api/circulation/",circulation_book)
             .then(res => alert(book.title +"added to " + book.issued_to ))
             .catch(err => console.log(err));
 
