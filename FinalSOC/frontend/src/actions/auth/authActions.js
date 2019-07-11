@@ -10,9 +10,15 @@ function authenticateAction(userData, dispatch, location, push) {
       localStorage.setItem("ecom_token", userData.token);
       localStorage.setItem("user" , userData.username);
     }
-
+    if(userData.username==='admin'){
+      if (location === "/login") {
+        push("/circulation");
+      }
+    }
+    else{
     if (location === "/login") {
       push("/user");
+    }
     }
 
     return dispatch({ type: types.AUTHENTICATED });

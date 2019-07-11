@@ -14,7 +14,7 @@ const PrivateRoute = ({ component: Component }, ...rest) => (
   <Route
     {...rest}
     render={props => {
-      return checkAuth() ? (
+      return (checkAuth()&&(localStorage.user ==='admin')) ? (
         <Component {...props} />
       ) : (
         <Redirect to={{ pathname: "/login" }} />

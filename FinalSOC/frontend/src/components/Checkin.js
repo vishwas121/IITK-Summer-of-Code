@@ -87,7 +87,7 @@ export default class Check extends Component {
 		<div class="poster p1">
         <form name='check_in'>
                         Book Code <input type='text' name='bar_checkin' placeholder="Please enter book code" value={this.state.bar_checkin} onChange={this.handleBar_checkin} /><br/> <br/>
-                        Date <input type='text' name='date_checkin' placeholder="dd/mm/yy" value={this.state.date_checkin} onChange={this.handleDate_checkin} /><br/> <br/>
+                        {/* Date <input type='text' name='date_checkin' placeholder="dd/mm/yy" value={this.state.date_checkin} onChange={this.handleDate_checkin} /><br/> <br/> */}
                         <button type="button" onClick={this.checkin}>CHECKIN</button>
                         <br/><br/>
                         <br/><br/><br/>
@@ -101,7 +101,7 @@ export default class Check extends Component {
         <form name='checkout'>
                         Card No. <input type="text" name="card_checkout" placeholder="Enter card no." value={this.state.card_checkout} onChange={this.handleCard_checkout} /> <br/><br/>
                         Book Code <input type='text' name='bar_checkout' placeholder="Please enter book code" value={this.state.bar_checkout} onChange={this.handleBar_checkout} /><br/> <br/>
-                        Date <input type='text' name='date_checkout' placeholder="dd/mm/yy" value={this.state.date_checkout} onChange={this.handleDate_checkout} /><br/> <br/>
+                        {/* Date <input type='text' name='date_checkout' placeholder="dd/mm/yy" value={this.state.date_checkout} onChange={this.handleDate_checkout} /><br/> <br/> */}
                         <button type="button" onClick={this.checkout}>CHECKOUT</button>
                         <br/><br/>
                         <br/><br/><br/>
