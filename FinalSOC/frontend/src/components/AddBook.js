@@ -92,7 +92,6 @@ export default class Staff extends Component{
     if ((id !==0) && (id !==-1)){
       var net = id.toString();
       var ur = "http://localhost:8000/api/catalogue/" + net;
-      alert(ur);
       axios
       .delete(ur)
       .then(res => this.getdata());
