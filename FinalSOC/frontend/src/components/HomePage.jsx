@@ -1,20 +1,16 @@
 import React from "react";
 import './home.css' ;
-
 const HomePage = () => (
-    <div>
+    <div >
    	   <div className="header">
          <center><h1 className="head1">Book Club, IIT Kanpur</h1></center>
         </div>
-        <div className="timing">
-        <h4 className="sup">Book Club Timings</h4>
-       Semester: 9 pm to 10 pm, everyday<br/>
-      Summers: 8:30 pm to 10:30 pm, weekends
-        </div>
+        <div className='bg4'>
+    
         <div className="body">
           "There is no friend as loyal as a book."
                                           - Ernest Hemingway
-                                          <h3><center> About you</center> </h3>
+                                          <h3><center> About Us</center> </h3>
                                           <p>
                                             People read for various reasons. Some read to broaden their perspective of the world and learn new things, some read to learn how to articulate their thoughts, some read to get inspiration, some read to get their mind free and see faraway places through the eye of their mind, some read to relax their mind after a tiring day full of hard work, deadlines and reports, while some read just for fun.
                                           </p>
@@ -34,7 +30,12 @@ const HomePage = () => (
                                             Do drop in and see us sometime!
                                           </p>
         </div>
-
+        <div className="timing">
+        <h4 className="sup">Book Club Timings</h4>
+       Semester: 9 pm to 10 pm, everyday<br/>
+      Summers: 8:30 pm to 10:30 pm, weekends
+        </div>
+        </div>
 
         </div>
 

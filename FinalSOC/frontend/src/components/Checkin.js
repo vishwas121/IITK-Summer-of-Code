@@ -75,7 +75,6 @@ export default class Check extends Component {
         <div className="bg">
         <div className="content">
         <h1 className="heading" align="center">Book Circulation</h1>
-        <div align='right'><button onclick="logout()">logout</button> </div>
         <hr />
 
 
@@ -194,12 +193,12 @@ incr_date(date_str){
         var url = "http://localhost:8000/api/catalogue/" + book.id + "/";
         axios
             .put(url,book)
-            .then(res => alert(book.title+" checked out"))
+            .then(res => console.log('checked out'))
             .catch(err=> console.log(err));
         const circulation_book = {"username":book.issued_to,"title":book.title,'author':book.author,'barcode':book.barcode,'status':book.status,'issue_date':book.issue_date,"return_date":book.due_date}
         axios
             .post("http://localhost:8000/api/circulation/",circulation_book)
-            .then(res => alert(book.title +"added to " + book.issued_to ))
+            .then(res => alert(book.title +" cheked out to " + book.issued_to ))
             .catch(err => console.log(err));
 
     }
