@@ -40,7 +40,8 @@ class Navigation extends Component {
   userIsAuthenticatedEmail() {
     if (this.props.authenticated) {
       return [
-          <div>
+        
+          <Nav navbar style={{ margin: "auto",  }}>
               <NavItem>
              <NavLink
                   tag={Link}
@@ -105,7 +106,8 @@ class Navigation extends Component {
             </DropdownItem>
           </DropdownMenu>
         </UncontrolledDropdown>
-    </div>
+    </Nav>
+  
       ];
     }
   }
@@ -171,6 +173,7 @@ class Navigation extends Component {
                 </NavLink>
 
               </NavItem>
+              
               <NavItem>
                   <NavLink
                   tag={Link}
@@ -184,6 +187,7 @@ class Navigation extends Component {
               </NavItem>
               {this.userIsNotAuthenticated()}
               {this.userIsAuthenticatedEmail()}
+              
             </Nav>
           </Collapse>
         </Navbar>

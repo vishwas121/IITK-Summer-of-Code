@@ -3,7 +3,7 @@ from .models import Book
 
 
 class BooksAdmin(admin.ModelAdmin):
-    list_display = ('title','author','barcode','status')
+    list_display = ('title','author','barcode','status','return_date')
 
 
 

@@ -32,14 +32,14 @@ class InnerRegistrationForm extends Component {
         <form onSubmit={handleSubmit}>
           <TextField
             name="username"
-            placeholder="Enter your Username"
+            placeholder="Enter your Roll number"
             type="text"
             value={values.username}
             onChange={handleChange}
             onBlur={handleBlur}
             error={errors.username && touched.username}
             helperText={errors.username && touched.username && errors.username}
-            label="Username"
+            label="Roll Number"
             className={classes.textField}
             required
           />

@@ -47,6 +47,7 @@ export default class User extends Component{
     }
     render(){
         return(
+            <div className="bg3">
             <div className="main">
             <h1 >DASHBOARD</h1>
             <div className="body">
@@ -58,6 +59,7 @@ export default class User extends Component{
                         <th>Book name</th>
                         <th>Book author</th>
                         <th>Issue Date</th>
+                        <th>Status</th>
                     </tr>
                     {this.circulation().map(book =>{
                         return (
@@ -71,6 +73,7 @@ export default class User extends Component{
                     })}
                 </table>
                 </div>
+            </div>
             </div>
         )
     }
